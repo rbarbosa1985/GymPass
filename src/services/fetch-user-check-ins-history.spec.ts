@@ -24,12 +24,12 @@ describe('Fetch User Check-in History Use Case', () => {
       user_id: 'user-01',
     })
 
-    const { checkIn } = await fetchUserCheckInHistoryUseCase.execute({
+    const { checkIns } = await fetchUserCheckInHistoryUseCase.execute({
       userId: 'user-01',
       page: 1,
     })
-    expect(checkIn).toHaveLength(2)
-    expect(checkIn).toEqual([
+    expect(checkIns).toHaveLength(2)
+    expect(checkIns).toEqual([
       expect.objectContaining({
         gym_id: 'gym-01',
         user_id: 'user-01',
@@ -49,13 +49,13 @@ describe('Fetch User Check-in History Use Case', () => {
       })
     }
 
-    const { checkIn } = await fetchUserCheckInHistoryUseCase.execute({
+    const { checkIns } = await fetchUserCheckInHistoryUseCase.execute({
       userId: 'user-01',
       page: 2,
     })
 
-    expect(checkIn).toHaveLength(2)
-    expect(checkIn).toEqual([
+    expect(checkIns).toHaveLength(2)
+    expect(checkIns).toEqual([
       expect.objectContaining({
         gym_id: 'gym-21',
 
